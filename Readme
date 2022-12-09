@@ -1,0 +1,500 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using static System.String;
+
+namespace Kybersport
+{
+    class Program
+    {
+        static void Main()
+        {
+            Write("Я 18 вариант\n");
+            Write("ТУТ 3 ПРАКТИКИ\n");
+            WriteLine("Введите номер задачи от 1 до 21");
+            int wibor = Convert.ToInt32(Console.ReadLine());
+            switch (wibor)
+            {
+                case 1:
+                    Funkciya();
+                    break;
+                case 2:
+                    Treugolbnik();
+                    break;
+                case 3:
+                    GrafikFunc();
+                    break;
+                case 4:
+                    PriznakiTransporta();
+                    break;
+                case 5:
+                    Vklad();
+                    break;
+                case 6:
+                    Chess();
+                    break;
+                case 7:
+                    Chislo();
+                    break;
+                case 8:
+                    vtorayaPZ1zadacha();
+                    break;
+                case 9:
+                    vtorayaPZ2zadacha();
+                    break;
+                case 10:
+                    vtorayaPZ3zadacha();
+                    break;
+                case 11:
+                    tretayaPZ1zadacha();
+                    break;
+                case 12:
+                    tretayaPZ2zadacha();
+                    break;
+                case 13:
+                    tretayaPZ3zadacha();
+                    break;
+                case 14:
+                    tretayaPZ4zadacha();
+                    break;
+                case 15:
+                    tretayaPZ5zadacha();
+                    break;
+                case 16:
+                    chetvertayaPZ1zadacha();
+                    break;
+                case 17:
+                    chetvertayaPZ2zadacha();
+                    break;
+                case 18:
+                    chetvertayaPZ3zadacha();
+                    break;
+                case 19:
+                    pyatayaPZ1zadacha();
+                    break;
+                case 20:
+                    pyatayaPZ2zadacha();
+                    break;
+                case 21:
+                    pyatayaPZ3zadacha();
+                    break;
+                default:
+                    Write("Вы выбрали неверный номер задачи еще раз попробуйте");
+                    break;
+
+            }
+
+
+        }
+        static void Funkciya() //верная
+        {
+            Console.Write("Введите x: \n");
+            double x = Convert.ToInt32(Console.ReadLine());
+            double y = 0;
+            if (x > Math.PI) y = Math.Sqrt(Math.E + Math.Sqrt(x)) - Math.Cos(x);
+            if (1 <= x && x <= 2) y = Math.Pow(x, 2) + Math.Log(x);
+            Console.WriteLine($"y = {Math.Round(y, 4)}");
+        }
+        static void Treugolbnik() //верная
+        {
+
+            Write("Определить является ли треугольник со сторонами a,b,c прямоугольным\n");
+            WriteLine("Введите сторону а:\n");
+            int a = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введите сторону b:\n");
+            int b = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введите сторону c:\n");
+            int c = Convert.ToInt32(Console.ReadLine());
+            if ((c * c == a * a + b * b))
+            {
+                Console.WriteLine("Треугольник существует. Он прямоугольный.");
+            }
+            else
+            {
+                Console.WriteLine("Треугольник существует. Он непрямоугольный.");
+            }
+        }
+        static void GrafikFunc() 
+        {
+            Write("y\n");
+            Write("^\n");
+            Write("|\n");
+            Write("|\n");
+            Write("|\n");
+            Write("------------------->x\n");
+            Write("|\n");
+            Write("|\n");
+            Write("|\n");
+            Write("|\n");
+            Write("|\n");
+           
+            int x, y;
+            Console.WriteLine("Введите x");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите y");
+            y = Convert.ToInt32(Console.ReadLine());
+            if(x > 0 && x < 10 && y > 0 && y < 5)
+            {
+                Write("На границе");
+            }
+            else
+            {
+                Write("net");
+            }
+        }
+        static void PriznakiTransporta() //верная
+        {
+            Write("Дан признак т/с автомобиль(а), велосипед(в), мотоцикл(м), самолет(с), поезд(п) \n");
+            Write("Вывести на экран максимальную скорость т/с в зависиммости от введнего признака\n");
+            WriteLine("Введите скорость автомобиля\n");
+            int speedauto = Convert.ToInt32(Console.ReadLine());
+            Write($"Скорость автомобиля = {speedauto} км/ч \n");
+            WriteLine("Введите скорость велосипеда \n");
+            int speedvel = Convert.ToInt32(Console.ReadLine());
+            Write($"Скорость  велосипеда = {speedvel} км/ч \n");
+            WriteLine("Введите скорость мотоцикла \n");
+            int speedmoto = Convert.ToInt32(Console.ReadLine());
+            Write($"Скорость мотоцикла = {speedmoto} км/ч \n");
+            WriteLine("Введите скорость самолета \n");
+            int speedfly = Convert.ToInt32(Console.ReadLine());
+            Write($"Скорость  самолета = {speedfly} км/ч \n");
+            WriteLine("Введите скорость поезда \n");
+            int speedtrain = Convert.ToInt32(Console.ReadLine());
+            Write($"Скорость  поезда = {speedtrain} км/ч \n");
+            if (speedauto > speedvel)
+            {
+                Write("Автомобиль быстрее велосипеда\n");
+            }
+            else
+            {
+                Write("Автомобиль медленее велосипеда\n");
+            }
+            if (speedvel > speedmoto)
+            {
+                Write("Велосипед быстрее мотоцикла что странно кстати\n");
+            }
+            else
+            {
+                Write("Велосипед медленее мотоцикла\n");
+            }
+            if (speedmoto > speedfly)
+            {
+                Write("Мотоцикл быстрее самолета\n");
+            }
+            else
+            {
+                Write("Мотоцикл медленее самолета\n");
+            }
+            if (speedfly > speedtrain)
+            {
+                Write("Самолет быстрее поезда\n");
+            }
+            else
+            {
+                Write("Самолет медленее поезда\n");
+            }
+            Write($"Введенные скорости {speedauto}, {speedvel}, {speedmoto}, {speedfly}, {speedtrain} км/ч");
+        }
+        static void Vklad() //верна
+        {
+            Write("известен начальный вклад клиента в банк и процент годового дохода\n");
+            Write("определить через сколько лет вклад превысит заданный размер и каков при этом будет размер вклада\n");
+            WriteLine("Введите сумму вклада ");
+            int vkladik = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введите процент годового дохода");
+            int procentik = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введите на сколько дней хотите сделать вклад ");
+            int day = Convert.ToInt32(Console.ReadLine());
+            int result = (vkladik * procentik * day / 365) / 100;
+            int godik = result / 365;
+            Write($"Размер вклада будет {result}р. 00коп");
+            Write($"Вклад превысит размер через {godik} дней(дня)");
+        }
+        static void Chess()
+        {
+            WriteLine("18. Пусть (k, l), (m, n) - поля шахматной доски: k,\n m - номера по горизонтали; l, n - номера по вертикали (l<k, m, n< 8).\n Определите можно ли с поля (k, l) попасть на поле (m, n) \nодним ходом пешки.");
+
+            WriteLine("Введи натуральное число: ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введи натуральное число: ");
+            int m = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введи натуральное число: ");
+            int l = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Введи натуральное число: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if ((k + l) % 2 == (m + n) % 2)
+            {
+                WriteLine("Поля одного цвета пешка пойти сможет");
+            }
+            else
+            {
+                WriteLine("Поля разного цвета не сможет");
+            }
+        }
+        static void Chislo()
+        {
+            Console.Write("Введите число k (1 <= k <= 150): ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            if (k % 3 == 0)
+            {
+
+                Write("Кратно 3");
+            }
+            else
+            {
+                Console.WriteLine("\nk не кратно 3");
+            }
+            if (k < 101)
+            {
+                Write("Неверно");
+                Write("Введите число k(1 <= k <= 150): ");
+            }
+            if (k > 150)
+            {
+                Write("\nНеверно");
+                Write("\nВведите число k(1 <= k <= 150): ");
+            }
+
+        }
+        static void vtorayaPZ1zadacha() //верная
+        {
+            Write("Введите переменную q\n");
+            int q = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nС циклом while: \n");
+            int i = 10;
+            while (i <= q)
+            {
+                Console.Write(" " + i);
+                i += 11;
+            }
+            Console.Write("\nС циклом do while: \n");
+            i = 10;
+            do
+            {
+                Console.Write(" " + i);
+                i += 11;
+            }
+            while (i <= q);
+            Console.Write("\nс циклом For: \n");
+            for (i = 10; i <= q; i += 11)
+            {
+                Console.Write(" " + i);
+            }
+
+        }
+        static void vtorayaPZ2zadacha() //neверная
+        {
+           
+
+        }
+
+        static void vtorayaPZ3zadacha()
+        {
+
+            for (int i = 100; i < 1000; i++)
+            {
+                bool simple = true;
+                for (int j = 2; j <= i / 2; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        simple = false;
+                        break;
+                    }
+                }
+                if (simple)
+                    Console.Write(i + " ");
+            }
+        }
+
+        static void tretayaPZ1zadacha()
+        {
+            Console.WriteLine("Введите число: ");
+            int N = Convert.ToInt32(Console.ReadLine());
+            int minI = 1, maxI = 1, _min = N % 10, _max = N % 10, counter = 1;
+            N /= 10;
+            while (N > 0)
+            {
+                counter++;
+                if (N % 10 > _max)
+                {
+                    _max = N % 10;
+                    maxI = counter;
+                }
+                if (N % 10 < _min)
+                {
+                    _min = N % 10;
+                    minI = counter;
+                }
+                N /= 10;
+            }
+            Console.WriteLine("Считаем позицию числа от разряда единиц, начинаем отсчет с единицы, ищем первое вхождение.");
+            Console.WriteLine($"Минимальне число {_min}, его номер по счету {minI}");
+            Console.WriteLine($"Максимальное число {_max}, его номер по счету {maxI}");
+        }
+        static void tretayaPZ2zadacha()
+        {
+            
+
+        }
+        static void tretayaPZ3zadacha() //доделать
+        {
+            Write("Введите кол-во квартир");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int max = 0;
+            int Imax = 0;
+            int[] a = new int[n];
+            for(int i=0; i<n;i++)
+            {
+                Write("Людей в квартире", a[i]);
+            }
+            for(int i=0; i < n; i++)
+            {
+                if (i == 0 || a[i] >= max)
+                {
+                    max = a[i];
+                    Imax = i;
+                }
+            }
+            Write($"В квартире {Imax}, живет {max} человек");
+        }
+        static void tretayaPZ4zadacha()
+        {
+            Write("Введите переменную x");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Write("П/2(A) = 1,57\n");
+            double A = 1.57;
+            Write("П(B) = 3,14\n");
+            double B = 3.14;
+            double H = (B - A) / 20;
+
+            for (double i = 0; i <= 20; i++)
+            {
+                Console.WriteLine("F(x)=({0:0.000}) = {1:0.000}", i, pomosh(i));
+            }
+        }
+        static double pomosh(double x) //метод  с параметром double который принимает и возвращает только double
+        {
+            return Math.Tan(x / 2) + Math.Cos(x);
+        }
+        static void tretayaPZ5zadacha() //доделать 
+        {
+           
+        }
+        static void chetvertayaPZ1zadacha()
+        {
+            int[] array =  { 123, -23, 999, -3, -228, 231, -32, 555};
+            for(int i =0; i<array.Length; i++)
+            {
+                if (array[i] < 0 && i % 2 != 0)
+                {
+           
+                    array[i] = 1;
+                    Write($"\n {array[i]}");
+                }
+            }
+           
+
+        }
+        static void chetvertayaPZ2zadacha()
+        {
+            Write("В одномерном массиве, состоящем из n вещественных элементов, вычислить:\n");
+            Write("минимальный по модулю элемент массива\n");
+            int[] array = {100,422,525,666,555,999,412,983};
+            int min = Math.Abs(array.Min());
+            Write(min);
+        }
+        static void chetvertayaPZ3zadacha()
+        {
+
+            Write("В массиве содержатся результаты измерений температуры воздуха\n которые проводились ежедневно в течение декабря месяца. Определите:\n");
+            Write("любые два самых холодных дня;\n");
+            int[] myArray = new int[31];
+            Random rand = new Random();
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] = rand.Next(-40, 8);
+
+            }
+            Array.Sort(myArray);
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                Write("\nДень декабря {0} , температура возуха = {1}\n", i + 1, myArray[i]);
+            }
+            Write("Самые холодные дни с температурой\n");
+            Write(myArray[0]);
+            Write(myArray[1]);
+        }
+        static void pyatayaPZ1zadacha()
+        {
+
+        }
+        static void pyatayaPZ2zadacha()
+        {
+            Random random = new Random();
+            int[] array = new int [10];
+            WriteLine("Массивчик: ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(-100,666);
+                Console.Write(array[i] + " ");
+            }
+            Write("\nВведите k1: ");
+            int k1 = Convert.ToInt32(Console.ReadLine());
+            Write("\nВведите k2: ");
+            int k2 = Convert.ToInt32(Console.ReadLine());
+            WriteLine("\nПересобранный массивчик ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                {
+                    array[i] -= k1;
+                }
+                else
+                {
+                    array[i] += k2;
+                }
+                Write(array[i] + " ");
+               
+            }
+        }
+        static void pyatayaPZ3zadacha()
+        {
+            int[] massivchik = { 20, 30, 15, 16, 17, 18, 19, 13, 21, 22, 23, 24, 25, 26, 27, 28, 29, 14, 31, 32, 33, 34 };
+            int[] b = new int[2];
+            b[0] = massivchik[0];
+            b[1] = massivchik[1];
+            int position1 = 0; int position2 = 0;
+            for(int i = 0; i < 22; i++)
+            {
+                if (b[0] > massivchik[i])
+                {
+                    b[0] = massivchik[i];
+                    position1 = i + 1;
+                }
+            }
+            for(int i =0; i < 22; i++)
+            {
+                if(b[1] > massivchik[i])
+                {
+                    if(massivchik[i] != b[0])
+                    {
+                        b[1] = massivchik[i];
+                        position2 = i+1;
+                    }
+                }
+            }
+            Write("Результаты спортсменов пробижавших 100м");
+            for(int i =0; i < 2; i++)
+            {
+                Write($"Первое место занял спортсмен с номером - {position1}, пробежавший за {b[0]}\n");
+                Write($"\nВторое место занял спортсмен с номером - {position2}, пробежавший за {b[1]}\n");
+            }
+            
+        }
+    }
+}
